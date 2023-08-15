@@ -38,3 +38,11 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+.discs {
+  padding-top: 100px;
+}
+
+.discs-row {
+  display: flex;
+}

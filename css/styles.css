@@ -56,3 +56,9 @@
 .home-page-button:focus {
   background-color: #b15718;
 }
+
+.disc {
+  border: 1px solid;
+  width: 30%;
+  border-radius: 50%;
+}
