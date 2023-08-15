@@ -1,13 +1,14 @@
-.home-page {
-  width: 100vw;
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: block;
 }
 
 .header-row {
   display: flex;
   align-items: center;
-  background-color: #1e5128;
-  font-family: Orbitron, sans-serif;
-  font-size: 24px;
 }
 
 .header-image {
@@ -19,10 +20,4 @@
 
 .header-title {
   width: 100%;
-  text-align: center;
-  margin-right: 50px;
-}
-
-.main-image {
-  object-fit: contain;
 }

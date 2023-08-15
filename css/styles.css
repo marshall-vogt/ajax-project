@@ -1,0 +1,28 @@
+.header-row {
+  background-color: #1e5128;
+  font-family: Orbitron, sans-serif;
+  font-size: 24px;
+}
+
+.header-image {
+  border-radius: 50%;
+  height: 87px;
+  width: 83px;
+  margin: 10px;
+}
+
+.header-title {
+  text-align: center;
+  margin-right: 50px;
+  color: white;
+}
+
+.main-image {
+  transform: translate(-21%, -5%) scale(0.9);
+  height: 100vh;
+}
+
+.main-row {
+  overflow: hidden;
+  height: 100vh;
+}
