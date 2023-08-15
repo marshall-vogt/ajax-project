@@ -26,3 +26,19 @@
   overflow: hidden;
   height: 100vh;
 }
+
+.navbar {
+  background-color: #1e5128;
+  height: 45px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.search-page {
+  background-color: #d8e9a8;
+  height: 100vh;
+}

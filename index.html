@@ -13,20 +13,32 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;600;700&family=Orbitron&family=Passion+One:wght@700&family=Ubuntu:wght@300&family=Varela+Round&display=swap"
     rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-  <div class="home-page shown" data-view="home-page">
-    <header>
-      <div class="header-row">
-        <img src="images/disc.png" alt="flying-disc" class="header-image">
-        <p class="header-title">Disc Buddy</p>
-      </div>
-    </header>
+  <header>
+    <div class="header-row">
+      <img src="images/disc.png" alt="flying-disc" class="header-image">
+      <p class="header-title">Disc Buddy</p>
+    </div>
+  </header>
+  <div class="home-page hidden" data-view="home-page">
     <main>
       <div class="main-row">
         <img src="images/home-page.jpg" alt="hole-18" class="main-image">
       </div>
     </main>
+  </div>
+  <div class="search-page shown" data-view="search-page">
+    <div class="discs">
+      <p>hello</p>
+    </div>
+    <div class="navbar">
+      <i class="fa-solid fa-house fa-2xl"></i>
+      <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
+      <i class="fa-regular fa-star fa-2xl"></i>
+      <i class="fa-solid fa-circle-plus fa-2xl"></i>
+    </div>
   </div>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
