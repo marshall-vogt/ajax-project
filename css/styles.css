@@ -18,13 +18,9 @@
 }
 
 .main-image {
-  transform: translate(-21%, -5%) scale(0.9);
+  transform: translate(-21%, 55px) scale(0.9);
   height: 100vh;
-}
-
-.main-row {
-  overflow: hidden;
-  height: 100vh;
+  object-fit: cover;
 }
 
 .navbar {
@@ -41,4 +37,22 @@
 .search-page {
   background-color: #d8e9a8;
   height: 100vh;
+}
+
+.home-page-button {
+  background-color: #da762e;
+  border: none;
+  border-radius: 50px;
+  width: 242px;
+  height: 81px;
+  font-family: Orbitron, sans-serif;
+  font-size: 1.3rem;
+}
+
+.home-page-button:hover {
+  cursor: pointer;
+}
+
+.home-page-button:focus {
+  background-color: #b15718;
 }
