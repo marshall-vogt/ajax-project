@@ -1,4 +1,4 @@
-// Search page view swap
+// Search-page and home-page view swap
 
 const $buildMyBag = document.querySelector('.home-page-button');
 const $homePage = document.querySelector('.home-page');
@@ -11,6 +11,22 @@ function searchPageView(event) {
   $homePage.classList.add('hidden');
   $searchPage.classList.remove('hidden');
   $searchPage.classList.add('shown');
+}
+
+const $navbarButtons = document.querySelectorAll('i');
+const $homeButton = $navbarButtons[0];
+const $searchButton = $navbarButtons[1];
+// const $favoritesButton = $navbarButtons[2];
+// const $bagButton = $navbarButtons[3];
+
+$homeButton.addEventListener('click', homePageView);
+$searchButton.addEventListener('click', searchPageView);
+
+function homePageView(event) {
+  $homePage.classList.remove('hidden');
+  $homePage.classList.add('shown');
+  $searchPage.classList.remove('shown');
+  $searchPage.classList.add('hidden');
 }
 
 // Obtain API data
@@ -42,7 +58,7 @@ function handleLoadEvent() {
       $discName.textContent = sortedResponse[i].name;
       $discNumbers.textContent = `${sortedResponse[i].speed}|${sortedResponse[i].glide}|${sortedResponse[i].turn}|${sortedResponse[i].fade}|`;
       $brandDiv.setAttribute('class', 'brand-row');
-      $discDiv.setAttribute('class', 'disc');
+      $discDiv.setAttribute('class', `disc ${sortedResponse[i].brand_slug}`);
       $rowDiv.setAttribute('class', 'disc-row');
       $discName.setAttribute('class', 'disc-name');
       $discNumbers.setAttribute('class', 'flight-numbers');
@@ -63,7 +79,7 @@ function handleLoadEvent() {
       $discName.textContent = sortedResponse[i].name;
       $discNumbers.textContent = `${sortedResponse[i].speed}|${sortedResponse[i].glide}|${sortedResponse[i].turn}|${sortedResponse[i].fade}|`;
       $brandDiv.setAttribute('class', 'brand-row');
-      $discDiv.setAttribute('class', 'disc');
+      $discDiv.setAttribute('class', `disc ${sortedResponse[i].brand_slug}`);
       $rowDiv.setAttribute('class', 'disc-row');
       $discName.setAttribute('class', 'disc-name');
       $discNumbers.setAttribute('class', 'flight-numbers');
@@ -81,7 +97,7 @@ function handleLoadEvent() {
       const previousRow = $allDiscRows[$allDiscRows.length - 1];
       $discName.textContent = sortedResponse[i].name;
       $discNumbers.textContent = `${sortedResponse[i].speed}|${sortedResponse[i].glide}|${sortedResponse[i].turn}|${sortedResponse[i].fade}|`;
-      $discDiv.setAttribute('class', 'disc');
+      $discDiv.setAttribute('class', `disc ${sortedResponse[i].brand_slug}`);
       $discName.setAttribute('class', 'disc-name');
       $discNumbers.setAttribute('class', 'flight-numbers');
       previousRow.append($discDiv);
