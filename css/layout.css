@@ -40,9 +40,27 @@
 }
 
 .discs {
-  padding-top: 100px;
+  padding-top: 110px;
 }
 
-.discs-row {
+.disc-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+}
+
+.brand-row {
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.flight-numbers {
+  margin-top: -0.5px;
 }
