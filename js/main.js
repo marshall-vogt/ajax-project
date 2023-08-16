@@ -108,3 +108,13 @@ function handleLoadEvent() {
 }
 
 xmlHR.send();
+
+// Event listener disc click to show to flight pattern
+
+/*
+$searchPage.addEventListener('click', handleDiscClick);
+
+function handleDiscClick(event) {
+  console.log(event.target);
+}
+*/
