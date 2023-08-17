@@ -121,16 +121,36 @@ async function handleDiscClick(event) {
   const response = await fetch('https://discit-api.fly.dev/disc');
   const data = await response.text();
   const parseData = JSON.parse(data);
-  if (event.target.classList.contains('disc') || event.target.classList.contains('disc-name') || event.target.classList.contains('flight-numbers')) {
+  if (event.target.classList.contains('disc')) {
     const $discName = event.target.querySelector('.disc-name');
     for (let i = 0; i < parseData.length; i++) {
       if (parseData[i].name === $discName.textContent) {
         $discModal.setAttribute('class', `disc-modal ${parseData[i].brand_slug}`);
         $flightPatternImage.setAttribute('src', `${parseData[i].pic}`);
       }
+      $blurModal.classList.remove('hidden');
+      $discModal.classList.remove('hidden');
     }
-    $blurModal.classList.remove('hidden');
-    $discModal.classList.remove('hidden');
+  } else if (event.target.classList.contains('disc-name')) {
+    const $discName = event.target.textContent;
+    for (let i = 0; i < parseData.length; i++) {
+      if (parseData[i].name === $discName.textContent) {
+        $discModal.setAttribute('class', `disc-modal ${parseData[i].brand_slug}`);
+        $flightPatternImage.setAttribute('src', `${parseData[i].pic}`);
+      }
+      $blurModal.classList.remove('hidden');
+      $discModal.classList.remove('hidden');
+    }
+  } else if (event.target.classList.contains('flight-numbers')) {
+    const $discName = event.target.previousElementSibling;
+    for (let i = 0; i < parseData.length; i++) {
+      if (parseData[i].name === $discName.textContent) {
+        $discModal.setAttribute('class', `disc-modal ${parseData[i].brand_slug}`);
+        $flightPatternImage.setAttribute('src', `${parseData[i].pic}`);
+      }
+      $blurModal.classList.remove('hidden');
+      $discModal.classList.remove('hidden');
+    }
   }
 }
 
