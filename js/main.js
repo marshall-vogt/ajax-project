@@ -111,10 +111,30 @@ xmlHR.send();
 
 // Event listener disc click to show to flight pattern
 
-/*
 $searchPage.addEventListener('click', handleDiscClick);
+const $blurModal = document.querySelector('.background-blur-modal');
+$blurModal.addEventListener('click', removeBlur);
+const $discModal = document.querySelector('.disc-modal');
+const $flightPatternImage = document.querySelector('.flight-pattern-image');
 
-function handleDiscClick(event) {
-  console.log(event.target);
+async function handleDiscClick(event) {
+  const response = await fetch('https://discit-api.fly.dev/disc');
+  const data = await response.text();
+  const parseData = JSON.parse(data);
+  if (event.target.classList.contains('disc') || event.target.classList.contains('disc-name') || event.target.classList.contains('flight-numbers')) {
+    const $discName = event.target.querySelector('.disc-name');
+    for (let i = 0; i < parseData.length; i++) {
+      if (parseData[i].name === $discName.textContent) {
+        $discModal.setAttribute('class', `disc-modal ${parseData[i].brand_slug}`);
+        $flightPatternImage.setAttribute('src', `${parseData[i].pic}`);
+      }
+    }
+    $blurModal.classList.remove('hidden');
+    $discModal.classList.remove('hidden');
+  }
 }
-*/
+
+function removeBlur(event) {
+  $blurModal.classList.add('hidden');
+  $discModal.classList.add('hidden');
+}

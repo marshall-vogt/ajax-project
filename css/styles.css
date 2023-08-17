@@ -18,6 +18,10 @@
   letter-spacing: 0.1rem;
 }
 
+.disc-modal {
+  border-radius: 50%;
+}
+
 @media screen and (max-width: 575px) {
   .main-image {
     transform: translate(-21%, 55px) scale(0.9);
@@ -40,6 +44,11 @@
   .flight-numbers {
     font-size: 0.58rem;
   }
+
+  .disc-modal {
+    width: 250px;
+    height: 250px;
+  }
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
@@ -60,6 +69,11 @@
   .flight-numbers {
     font-size: 0.6rem;
   }
+
+  .disc-modal {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1520px) {
@@ -79,6 +93,11 @@
 
   .flight-numbers {
     font-size: 0.7rem;
+  }
+
+  .disc-modal {
+    width: 350px;
+    height: 350px;
   }
 }
 
@@ -102,6 +121,15 @@
   .flight-numbers {
     font-size: 0.8rem;
   }
+
+  .disc-modal {
+    width: 400px;
+    height: 400px;
+  }
+}
+
+img {
+  transform: scale(0.6);
 }
 
 .navbar {
