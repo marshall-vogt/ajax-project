@@ -48,6 +48,9 @@ function handleLoadEvent() {
 
   for (let i = 0; i < sortedResponse.length; i++) {
     if (i === 0) {
+      if (sortedResponse[i].brand_slug === 'løft-discs') {
+        sortedResponse[i].brand_slug = 'loft-discs';
+      }
       const $brandDiv = document.createElement('div');
       const $brandHeader = document.createElement('h3');
       const $discDiv = document.createElement('div');
@@ -69,6 +72,9 @@ function handleLoadEvent() {
       $discDiv.append($discName);
       $discDiv.append($discNumbers);
     } else if (sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
+      if (sortedResponse[i].brand_slug === 'løft-discs') {
+        sortedResponse[i].brand_slug = 'loft-discs';
+      }
       const $brandDiv = document.createElement('div');
       const $brandHeader = document.createElement('h3');
       const $discDiv = document.createElement('div');
@@ -90,6 +96,9 @@ function handleLoadEvent() {
       $discDiv.append($discName);
       $discDiv.append($discNumbers);
     } else {
+      if (sortedResponse[i].brand_slug === 'løft-discs') {
+        sortedResponse[i].brand_slug = 'loft-discs';
+      }
       const $discDiv = document.createElement('div');
       const $discName = document.createElement('p');
       const $discNumbers = document.createElement('p');
@@ -116,6 +125,7 @@ const $blurModal = document.querySelector('.background-blur-modal');
 $blurModal.addEventListener('click', removeBlur);
 const $discModal = document.querySelector('.disc-modal');
 const $flightPatternImage = document.querySelector('.flight-pattern-image');
+const $anchor = document.querySelector('a');
 
 async function handleDiscClick(event) {
   const response = await fetch('https://discit-api.fly.dev/disc');
@@ -124,9 +134,13 @@ async function handleDiscClick(event) {
   if (event.target.classList.contains('disc')) {
     const $discName = event.target.querySelector('.disc-name');
     for (let i = 0; i < parseData.length; i++) {
+      if (parseData[i].brand_slug === 'løft-discs') {
+        parseData[i].brand_slug = 'loft-discs';
+      }
       if (parseData[i].name === $discName.textContent) {
         $discModal.setAttribute('class', `disc-modal ${parseData[i].brand_slug}`);
         $flightPatternImage.setAttribute('src', `${parseData[i].pic}`);
+        $anchor.setAttribute('href', `${parseData[i].link}`);
       }
       $blurModal.classList.remove('hidden');
       $discModal.classList.remove('hidden');
@@ -134,9 +148,13 @@ async function handleDiscClick(event) {
   } else if (event.target.classList.contains('disc-name')) {
     const $discName = event.target.textContent;
     for (let i = 0; i < parseData.length; i++) {
-      if (parseData[i].name === $discName.textContent) {
+      if (parseData[i].brand_slug === 'løft-discs') {
+        parseData[i].brand_slug = 'loft-discs';
+      }
+      if (parseData[i].name === $discName) {
         $discModal.setAttribute('class', `disc-modal ${parseData[i].brand_slug}`);
         $flightPatternImage.setAttribute('src', `${parseData[i].pic}`);
+        $anchor.setAttribute('href', `${parseData[i].link}`);
       }
       $blurModal.classList.remove('hidden');
       $discModal.classList.remove('hidden');
@@ -144,9 +162,13 @@ async function handleDiscClick(event) {
   } else if (event.target.classList.contains('flight-numbers')) {
     const $discName = event.target.previousElementSibling;
     for (let i = 0; i < parseData.length; i++) {
+      if (parseData[i].brand_slug === 'løft-discs') {
+        parseData[i].brand_slug = 'loft-discs';
+      }
       if (parseData[i].name === $discName.textContent) {
         $discModal.setAttribute('class', `disc-modal ${parseData[i].brand_slug}`);
         $flightPatternImage.setAttribute('src', `${parseData[i].pic}`);
+        $anchor.setAttribute('href', `${parseData[i].link}`);
       }
       $blurModal.classList.remove('hidden');
       $discModal.classList.remove('hidden');

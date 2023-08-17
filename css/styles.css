@@ -22,6 +22,10 @@
   border-radius: 50%;
 }
 
+.flight-pattern-image:hover {
+  cursor: pointer;
+}
+
 @media screen and (max-width: 575px) {
   .main-image {
     transform: translate(-21%, 55px) scale(0.9);
@@ -46,8 +50,16 @@
   }
 
   .disc-modal {
-    width: 250px;
-    height: 250px;
+    width: 350px;
+    height: 350px;
+  }
+
+  .flight-pattern-image {
+    transform: scale(0.6);
+  }
+
+  .flight-pattern-image:hover {
+    transform: scale(0.62);
   }
 }
 
@@ -71,8 +83,16 @@
   }
 
   .disc-modal {
-    width: 300px;
-    height: 300px;
+    width: 400px;
+    height: 400px;
+  }
+
+  .flight-pattern-image {
+    transform: scale(0.7);
+  }
+
+  .flight-pattern-image:hover {
+    transform: scale(0.72);
   }
 }
 
@@ -96,8 +116,16 @@
   }
 
   .disc-modal {
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
+  }
+
+  .flight-pattern-image {
+    transform: scale(0.8);
+  }
+
+  .flight-pattern-image:hover {
+    transform: scale(0.82);
   }
 }
 
@@ -123,13 +151,17 @@
   }
 
   .disc-modal {
-    width: 400px;
-    height: 400px;
+    width: 500px;
+    height: 500px;
   }
-}
 
-img {
-  transform: scale(0.6);
+  .flight-pattern-image {
+    transform: scale(0.85);
+  }
+
+  .flight-pattern-image:hover {
+    transform: scale(0.87);
+  }
 }
 
 .navbar {
@@ -328,12 +360,11 @@ h3 {
   background-color: #00c2ff;
 }
 
-/*
-.løft-discs {
+.loft-discs {
   border: 5px solid #faff00;
   background-color: #00ff1a;
 }
-*/
+
 .lone-star-discs {
   border: 5px solid #424242;
   background-color: #8a00de;
