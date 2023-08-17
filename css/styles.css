@@ -13,9 +13,9 @@
 
 .home-page {
   background-image: url("/images/home-page.jpg");
-  width: 100%;
-  height: auto;
-  border: 1px solid;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
 }
 
 .header-title {
@@ -68,14 +68,13 @@
   .flight-pattern-image:hover {
     transform: scale(0.62);
   }
+
+  .home-page {
+    background-position: 30% -40%;
+  }
 }
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
-  .main-image {
-    transform: translate(-10%, 55px);
-    height: 100vh;
-  }
-
   .disc {
     height: 120px;
     width: 120px;
@@ -100,6 +99,10 @@
 
   .flight-pattern-image:hover {
     transform: scale(0.72);
+  }
+
+  .home-page {
+    background-position: 20% 50%;
   }
 }
 
@@ -133,6 +136,10 @@
 
   .flight-pattern-image:hover {
     transform: scale(0.82);
+  }
+
+  .home-page {
+    background-position: 10% 50%;
   }
 }
 
@@ -168,6 +175,10 @@
 
   .flight-pattern-image:hover {
     transform: scale(0.87);
+  }
+
+  .home-page {
+    background-position: 0% 50%;
   }
 }
 
