@@ -8,8 +8,6 @@
 
 .background-blur-modal {
   position: fixed;
-  top: 0;
-  left: 0;
   z-index: 1;
   width: 100vw;
   height: 100vh;
@@ -37,13 +35,6 @@
   z-index: 2;
 }
 
-.header-image {
-  border-radius: 50%;
-  height: 87px;
-  width: 83px;
-  margin: 10px;
-}
-
 .header-title {
   width: 100%;
 }
@@ -56,7 +47,6 @@
 
 .home-page-button {
   position: fixed;
-  z-index: 1;
   bottom: 5%;
   left: 50%;
   transform: translate(-50%, -50%);
