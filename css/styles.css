@@ -11,6 +11,13 @@
   margin: 10px;
 }
 
+.home-page {
+  background-image: url("/images/home-page.jpg");
+  width: 100%;
+  height: auto;
+  border: 1px solid;
+}
+
 .header-title {
   text-align: center;
   margin-right: 50px;
@@ -185,8 +192,10 @@
   }
 }
 
-body {
+.search-page {
   background-color: #d8e9a8;
+  border: 1px solid;
+  height: 100%;
 }
 
 .home-page-button {

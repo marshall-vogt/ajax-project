@@ -29,9 +29,8 @@
 .header-row {
   display: flex;
   align-items: center;
-  position: fixed;
-  top: 0;
-  width: 100%;
+  width: 100vw;
+  position: sticky;
   z-index: 2;
 }
 
@@ -39,21 +38,11 @@
   width: 100%;
 }
 
-.home-page {
-  position: fixed;
-  bottom: 0;
-  z-index: -1;
-}
-
-.home-page-button {
-  position: fixed;
-  bottom: 5%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.discs {
-  padding-top: 110px;
+.main-row {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 .disc-row {

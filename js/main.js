@@ -31,8 +31,6 @@ function homePageView(event) {
 
 // Obtain API data
 
-const $discs = document.querySelector('.discs');
-
 const xmlHR = new XMLHttpRequest();
 xmlHR.open('GET', 'https://discit-api.fly.dev/disc');
 xmlHR.responseType = 'json';
@@ -48,75 +46,88 @@ function handleLoadEvent() {
 
   for (let i = 0; i < sortedResponse.length; i++) {
     if (i === 0) {
-      if (sortedResponse[i].brand_slug === 'løft-discs') {
-        sortedResponse[i].brand_slug = 'loft-discs';
-      }
-      const $brandDiv = document.createElement('div');
-      const $brandHeader = document.createElement('h3');
-      const $discDiv = document.createElement('div');
-      const $rowDiv = document.createElement('div');
-      const $discName = document.createElement('p');
-      const $discNumbers = document.createElement('p');
-      $brandHeader.textContent = sortedResponse[i].brand;
-      $discName.textContent = sortedResponse[i].name;
-      $discNumbers.textContent = `${sortedResponse[i].speed}|${sortedResponse[i].glide}|${sortedResponse[i].turn}|${sortedResponse[i].fade}|`;
-      $brandDiv.setAttribute('class', 'brand-row');
-      $discDiv.setAttribute('class', `disc ${sortedResponse[i].brand_slug}`);
-      $rowDiv.setAttribute('class', 'disc-row');
-      $discName.setAttribute('class', 'disc-name');
-      $discNumbers.setAttribute('class', 'flight-numbers');
-      $discs.append($brandDiv);
-      $brandDiv.append($brandHeader);
-      $discs.append($rowDiv);
-      $rowDiv.append($discDiv);
-      $discDiv.append($discName);
-      $discDiv.append($discNumbers);
+      renderDisc1(sortedResponse[i]);
     } else if (sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
-      if (sortedResponse[i].brand_slug === 'løft-discs') {
-        sortedResponse[i].brand_slug = 'loft-discs';
-      }
-      const $brandDiv = document.createElement('div');
-      const $brandHeader = document.createElement('h3');
-      const $discDiv = document.createElement('div');
-      const $rowDiv = document.createElement('div');
-      const $discName = document.createElement('p');
-      const $discNumbers = document.createElement('p');
-      $brandHeader.textContent = sortedResponse[i].brand;
-      $discName.textContent = sortedResponse[i].name;
-      $discNumbers.textContent = `${sortedResponse[i].speed}|${sortedResponse[i].glide}|${sortedResponse[i].turn}|${sortedResponse[i].fade}|`;
-      $brandDiv.setAttribute('class', 'brand-row');
-      $discDiv.setAttribute('class', `disc ${sortedResponse[i].brand_slug}`);
-      $rowDiv.setAttribute('class', 'disc-row');
-      $discName.setAttribute('class', 'disc-name');
-      $discNumbers.setAttribute('class', 'flight-numbers');
-      $discs.append($brandDiv);
-      $brandDiv.append($brandHeader);
-      $discs.append($rowDiv);
-      $rowDiv.append($discDiv);
-      $discDiv.append($discName);
-      $discDiv.append($discNumbers);
+      renderDisc2(sortedResponse[i]);
     } else {
-      if (sortedResponse[i].brand_slug === 'løft-discs') {
-        sortedResponse[i].brand_slug = 'loft-discs';
-      }
-      const $discDiv = document.createElement('div');
-      const $discName = document.createElement('p');
-      const $discNumbers = document.createElement('p');
-      const $allDiscRows = document.querySelectorAll('.disc-row');
-      const previousRow = $allDiscRows[$allDiscRows.length - 1];
-      $discName.textContent = sortedResponse[i].name;
-      $discNumbers.textContent = `${sortedResponse[i].speed}|${sortedResponse[i].glide}|${sortedResponse[i].turn}|${sortedResponse[i].fade}|`;
-      $discDiv.setAttribute('class', `disc ${sortedResponse[i].brand_slug}`);
-      $discName.setAttribute('class', 'disc-name');
-      $discNumbers.setAttribute('class', 'flight-numbers');
-      previousRow.append($discDiv);
-      $discDiv.append($discName);
-      $discDiv.append($discNumbers);
+      renderDisc3(sortedResponse[i]);
     }
   }
 }
-
 xmlHR.send();
+
+const $discs = document.querySelector('.discs');
+
+function renderDisc1(disc) {
+  if (disc.brand_slug === 'løft-discs') {
+    disc.brand_slug = 'loft-discs';
+  }
+  const $brandDiv = document.createElement('div');
+  const $brandHeader = document.createElement('h3');
+  const $discDiv = document.createElement('div');
+  const $rowDiv = document.createElement('div');
+  const $discName = document.createElement('p');
+  const $discNumbers = document.createElement('p');
+  $brandHeader.textContent = disc.brand;
+  $discName.textContent = disc.name;
+  $discNumbers.textContent = `${disc.speed}|${disc.glide}|${disc.turn}|${disc.fade}|`;
+  $brandDiv.setAttribute('class', 'brand-row');
+  $discDiv.setAttribute('class', `disc ${disc.brand_slug}`);
+  $rowDiv.setAttribute('class', 'disc-row');
+  $discName.setAttribute('class', 'disc-name');
+  $discNumbers.setAttribute('class', 'flight-numbers');
+  $discs.append($brandDiv);
+  $brandDiv.append($brandHeader);
+  $discs.append($rowDiv);
+  $rowDiv.append($discDiv);
+  $discDiv.append($discName);
+  $discDiv.append($discNumbers);
+}
+
+function renderDisc2(disc) {
+  if (disc.brand_slug === 'løft-discs') {
+    disc.brand_slug = 'loft-discs';
+  }
+  const $brandDiv = document.createElement('div');
+  const $brandHeader = document.createElement('h3');
+  const $discDiv = document.createElement('div');
+  const $rowDiv = document.createElement('div');
+  const $discName = document.createElement('p');
+  const $discNumbers = document.createElement('p');
+  $brandHeader.textContent = disc.brand;
+  $discName.textContent = disc.name;
+  $discNumbers.textContent = `${disc.speed}|${disc.glide}|${disc.turn}|${disc.fade}|`;
+  $brandDiv.setAttribute('class', 'brand-row');
+  $discDiv.setAttribute('class', `disc ${disc.brand_slug}`);
+  $rowDiv.setAttribute('class', 'disc-row');
+  $discName.setAttribute('class', 'disc-name');
+  $discNumbers.setAttribute('class', 'flight-numbers');
+  $discs.append($brandDiv);
+  $brandDiv.append($brandHeader);
+  $discs.append($rowDiv);
+  $rowDiv.append($discDiv);
+  $discDiv.append($discName);
+  $discDiv.append($discNumbers);
+}
+
+function renderDisc3(disc) {
+  if (disc.brand_slug === 'løft-discs') {
+    disc.brand_slug = 'loft-discs';
+  }
+  const $discDiv = document.createElement('div');
+  const $discName = document.createElement('p');
+  const $discNumbers = document.createElement('p');
+  const $allDiscRows = document.querySelectorAll('.disc-row');
+  const previousRow = $allDiscRows[$allDiscRows.length - 1];
+  $discName.textContent = disc.name;
+  $discNumbers.textContent = `${disc.speed}|${disc.glide}|${disc.turn}|${disc.fade}|`;
+  $discDiv.setAttribute('class', `disc ${disc.brand_slug}`);
+  $discName.setAttribute('class', 'disc-name');
+  $discNumbers.setAttribute('class', 'flight-numbers');
+  previousRow.append($discDiv);
+  $discDiv.append($discName);
+  $discDiv.append($discNumbers);
+}
 
 // Event listener disc click to show to flight pattern
 
