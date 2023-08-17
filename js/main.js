@@ -3,6 +3,7 @@
 const $buildMyBag = document.querySelector('.home-page-button');
 const $homePage = document.querySelector('.home-page');
 const $searchPage = document.querySelector('.search-page');
+const $filterPage = document.querySelector('.filter-page');
 
 $buildMyBag.addEventListener('click', searchPageView);
 
@@ -11,6 +12,8 @@ function searchPageView(event) {
   $homePage.classList.add('hidden');
   $searchPage.classList.remove('hidden');
   $searchPage.classList.add('shown');
+  $filterPage.classList.remove('shown');
+  $filterPage.classList.add('hidden');
 }
 
 const $navbarButtons = document.querySelectorAll('i');
@@ -25,6 +28,8 @@ function homePageView(event) {
   $homePage.classList.add('shown');
   $searchPage.classList.remove('shown');
   $searchPage.classList.add('hidden');
+  $filterPage.classList.remove('shown');
+  $filterPage.classList.add('hidden');
 }
 
 // Obtain API data
@@ -193,4 +198,27 @@ function handleDiscClick(event) {
 function removeBlur(event) {
   $blurModal.classList.add('hidden');
   $discModal.classList.add('hidden');
+}
+
+// Filter page view swap
+
+const $filterButton = document.querySelector('.filter-button');
+$filterButton.addEventListener('click', filterView);
+
+function filterView(event) {
+  $homePage.classList.remove('shown');
+  $homePage.classList.add('hidden');
+  $searchPage.classList.remove('shown');
+  $searchPage.classList.add('hidden');
+  $filterPage.classList.remove('hidden');
+  $filterPage.classList.add('shown');
+}
+
+// Filter apply
+
+const $applyButton = document.querySelector('.apply-button');
+$applyButton.addEventListener('click', applyFilter);
+
+function applyFilter(event) {
+  searchPageView();
 }

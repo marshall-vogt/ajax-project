@@ -32,12 +32,33 @@
     <div class="disc-modal hidden"><a href="" target="_blank"><img src="" alt="flight-pattern" class="flight-pattern-image"></a></div>
     <div class="search-page hidden" data-view="search-page">
       <div class="discs"></div>
-      <div class="navbar">
-        <i class="fa-solid fa-house fa-2xl"></i>
-        <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
-        <i class="fa-regular fa-star fa-2xl"></i>
-        <i class="fa-solid fa-circle-plus fa-2xl"></i>
+      <div class="filter-button-div"><button class="filter-button">Filter</button></div>
+    </div>
+    <div class="filter-page hidden">
+      <div class="drop-down-row">
+        <select name="brand" id="brand-select">
+          <option value="">Select a Brand</option>
+        </select>
+        <select name="speed" id="speed-select">
+          <option value="">Select a Speed</option>
+        </select>
+        <select name="stability" id="stability-select">
+          <option value="">Select a Stability</option>
+        </select>
+        <select name="category" id="category-select">
+          <option value="">Select a Category</option>
+        </select>
       </div>
+      <div class="reset-apply-row">
+        <button class="reset-button">Reset</button>
+        <button class="apply-button">Apply</button>
+      </div>
+    </div>
+    <div class="navbar">
+      <i class="fa-solid fa-house fa-2xl"></i>
+      <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
+      <i class="fa-regular fa-star fa-2xl"></i>
+      <i class="fa-solid fa-circle-plus fa-2xl"></i>
     </div>
   </main>
   <script src="js/data.js"></script>
