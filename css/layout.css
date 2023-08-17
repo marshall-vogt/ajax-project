@@ -1,0 +1,86 @@
+.hidden {
+  display: none !important;
+}
+
+.shown {
+  display: block;
+}
+
+.background-blur-modal {
+  position: fixed;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.disc-modal {
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-row {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  z-index: 2;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+.header-title {
+  width: 100%;
+}
+
+.main-row {
+  display: flex;
+  height: 80vh;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.disc-row {
+  display: grid;
+}
+
+@media screen and (max-width: 767px) {
+  .disc-row {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    margin: 10px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .disc-row {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    margin: 20px;
+  }
+}
+
+.brand-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  place-self: center;
+}
+
+.flight-numbers {
+  margin-top: -0.5px;
+}

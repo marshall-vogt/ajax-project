@@ -1,0 +1,475 @@
+.header-row {
+  background-color: #1e5128;
+  font-family: Orbitron, sans-serif;
+  font-size: 24px;
+}
+
+.header-image {
+  border-radius: 50%;
+  height: 87px;
+  width: 83px;
+  margin: 10px;
+}
+
+.home-page {
+  background-image: url("/images/home-page.jpg");
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
+
+.header-title {
+  text-align: center;
+  margin-right: 50px;
+  color: white;
+  letter-spacing: 0.1rem;
+}
+
+.disc-modal {
+  border-radius: 50%;
+}
+
+.flight-pattern-image:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 575px) {
+  .main-image {
+    transform: translate(-21%, 55px) scale(0.9);
+    height: 100vh;
+  }
+
+  .navbar {
+    justify-content: space-around;
+  }
+
+  .disc {
+    height: 110px;
+    width: 110px;
+  }
+
+  .disc-name {
+    font-size: 0.65rem;
+  }
+
+  .flight-numbers {
+    font-size: 0.58rem;
+  }
+
+  .disc-modal {
+    width: 350px;
+    height: 350px;
+  }
+
+  .flight-pattern-image {
+    transform: scale(0.6);
+  }
+
+  .flight-pattern-image:hover {
+    transform: scale(0.62);
+  }
+
+  .home-page {
+    background-position: 30% -40%;
+  }
+}
+
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .disc {
+    height: 120px;
+    width: 120px;
+  }
+
+  .disc-name {
+    font-size: 0.7rem;
+  }
+
+  .flight-numbers {
+    font-size: 0.6rem;
+  }
+
+  .disc-modal {
+    width: 400px;
+    height: 400px;
+  }
+
+  .flight-pattern-image {
+    transform: scale(0.7);
+  }
+
+  .flight-pattern-image:hover {
+    transform: scale(0.72);
+  }
+
+  .home-page {
+    background-position: 20% 50%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1520px) {
+  .main-image {
+    transform: translate(0, 55px);
+    height: 100vh;
+  }
+
+  .disc {
+    height: 130px;
+    width: 130px;
+  }
+
+  .disc-name {
+    font-size: 0.8rem;
+  }
+
+  .flight-numbers {
+    font-size: 0.7rem;
+  }
+
+  .disc-modal {
+    width: 450px;
+    height: 450px;
+  }
+
+  .flight-pattern-image {
+    transform: scale(0.8);
+  }
+
+  .flight-pattern-image:hover {
+    transform: scale(0.82);
+  }
+
+  .home-page {
+    background-position: 10% 50%;
+  }
+}
+
+@media screen and (min-width: 1520px) {
+  .main-image {
+    transform: translate(0, 55px);
+    height: 100vh;
+    object-fit: fill;
+    width: 100vw;
+  }
+
+  .disc {
+    height: 140px;
+    width: 140px;
+  }
+
+  .disc-name {
+    font-size: 0.9rem;
+  }
+
+  .flight-numbers {
+    font-size: 0.8rem;
+  }
+
+  .disc-modal {
+    width: 500px;
+    height: 500px;
+  }
+
+  .flight-pattern-image {
+    transform: scale(0.85);
+  }
+
+  .flight-pattern-image:hover {
+    transform: scale(0.87);
+  }
+
+  .home-page {
+    background-position: 0% 50%;
+  }
+}
+
+.navbar {
+  background-color: #1e5128;
+  height: 45px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+}
+
+@media screen and (min-width: 575px) {
+  .navbar {
+    justify-content: center;
+  }
+
+  i {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
+}
+
+.search-page {
+  background-color: #d8e9a8;
+  border: 1px solid;
+  height: 100%;
+}
+
+.home-page-button {
+  background-color: #da762e;
+  border: none;
+  border-radius: 50px;
+  width: 242px;
+  height: 81px;
+  font-family: Orbitron, sans-serif;
+  font-size: 1.3rem;
+}
+
+.home-page-button:hover {
+  cursor: pointer;
+}
+
+i:hover {
+  cursor: pointer;
+}
+
+.home-page-button:focus {
+  background-color: #b15718;
+}
+
+.disc {
+  border-radius: 50%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 5px;
+}
+
+.disc:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+h3 {
+  font-family: Ubuntu, sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: -5px;
+}
+
+.disc-name,
+.flight-numbers {
+  font-family: Orbitron, sans-serif;
+  letter-spacing: 0.15rem;
+  text-align: center;
+}
+
+.disc-name {
+  font-weight: 700;
+}
+
+/* Disc Colors */
+
+.above-ground-level {
+  border: 5px solid #db5252;
+  background-color: #d88585;
+}
+
+.aquaflight {
+  border: 5px solid #6d893f;
+  background-color: #bdd885;
+}
+
+.axiom-discs {
+  border: 5px solid #45b9b2;
+  background-color: #85d8ba;
+}
+
+.clash-discs {
+  border: 5px solid #437fda;
+  background-color: #85a1d8;
+}
+
+.crosslap {
+  border: 5px solid #8e0ea3;
+  background-color: #b485d8;
+}
+
+.daredevil-discs {
+  border: 5px solid #21f18d;
+  background-color: #c74840;
+}
+
+.dga {
+  border: 5px solid #05073e;
+  background-color: #a41111;
+}
+
+.disc-golf-uk {
+  border: 5px solid #b43c3c;
+  background-color: #5e54d4;
+}
+
+.discmania {
+  border: 5px solid #9c0f0f;
+  background-color: #d3b23b;
+}
+
+.discraft {
+  border: 5px solid #b1b500;
+  background-color: #007e2b;
+}
+
+.disctroyer {
+  border: 5px solid #394202;
+  background-color: #eabcff;
+}
+
+.dynamic-discs {
+  border: 5px solid #09069b;
+  background-color: #d103d6;
+}
+
+.elevation-disc-golf {
+  border: 5px solid #d9d9d9;
+  background-color: #9b85d8;
+}
+
+.ev-7 {
+  border: 5px solid #6dae19;
+  background-color: #0f6799;
+}
+
+.finish-line {
+  border: 5px solid #9e1dbe;
+  background-color: #191fa5;
+}
+
+.gateway {
+  border: 5px solid #920fa7;
+  background-color: #ccfa6a;
+}
+
+.hooligan-discs {
+  border: 5px solid #29c341;
+  background-color: #5b0e0e;
+}
+
+.infinite-discs {
+  border: 5px solid #000;
+  background-color: #f88555;
+}
+
+.innova {
+  border: 5px solid #03008d;
+  background-color: #104f07;
+}
+
+.kastaplast {
+  border: 5px solid #a31818;
+  background-color: #03a0d1;
+}
+
+.latitude-64 {
+  border: 5px solid #ff6e04;
+  background-color: #1a9307;
+}
+
+.legacy {
+  border: 5px solid #04cf19;
+  background-color: #548c6b;
+}
+
+.lightning {
+  border: 5px solid #dcff06;
+  background-color: #00c2ff;
+}
+
+.loft-discs {
+  border: 5px solid #faff00;
+  background-color: #00ff1a;
+}
+
+.lone-star-discs {
+  border: 5px solid #424242;
+  background-color: #8a00de;
+}
+
+.millennium {
+  border: 5px solid #c70000;
+  background-color: #fa00ff;
+}
+
+.mint-discs {
+  border: 5px solid #6a0101;
+  background-color: #11530f;
+}
+
+.mvp {
+  border: 5px solid #d40000;
+  background-color: #470a94;
+}
+
+.other {
+  border: 5px solid #cb5757;
+  background-color: #5b634b;
+}
+
+.prodigy {
+  border: 5px solid #00cc39;
+  background-color: #ff0211;
+}
+
+.prodiscus {
+  border: 5px solid #ffe600;
+  background-color: #2655cd;
+}
+
+.rpm {
+  border: 5px solid #9900f6;
+  background-color: #00ffe0;
+}
+
+.sacred-discs {
+  border: 5px solid #00f6a8;
+  background-color: #005eff;
+}
+
+.storm {
+  border: 5px solid #000;
+  background-color: #fff845;
+}
+
+.streamline {
+  border: 5px solid #d9d9d9;
+  background-color: #29ffcc;
+}
+
+.thought-space-athletics {
+  border: 5px solid #09a9b4;
+  background-color: #2f5dff;
+}
+
+.trash-panda {
+  border: 5px solid #00ff38;
+  background-color: #ff6b00;
+}
+
+.vibram {
+  border: 5px solid #0082ba;
+  background-color: #9b9e00;
+}
+
+.viking {
+  border: 5px solid #573c92;
+  background-color: #e10000;
+}
+
+.westside-discs {
+  border: 5px solid #56bd06;
+  background-color: #faa250;
+}
+
+.wild-discs {
+  border: 5px solid #ff05c8;
+  background-color: #beeeae;
+}
+
+.yikun {
+  border: 5px solid #fff500;
+  background-color: #79689d;
+}
