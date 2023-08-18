@@ -217,8 +217,98 @@ function filterView(event) {
 
 const $applyButton = document.querySelector('.apply-button');
 $applyButton.addEventListener('click', applyFilter);
+const $allselectButtons = document.querySelectorAll('select');
 
 function applyFilter(event) {
+  event.preventDefault();
+  const filterNames = [];
+  const filterValues = [];
+  const $allBrandRows = document.querySelectorAll('.brand-row');
+  const $allDiscRows = document.querySelectorAll('.disc-row');
+  for (let k = 0; k < $allBrandRows.length; k++) {
+    $allBrandRows[k].remove();
+    $allDiscRows[k].remove();
+  }
+  for (let i = 0; i < $allselectButtons.length; i++) {
+    const options = $allselectButtons[i];
+    const selectedValue = options[options.selectedIndex].value;
+    const selectedName = options.name;
+    if (selectedValue !== '') {
+      filterNames.push(selectedName);
+      filterValues.push(selectedValue);
+    }
+  }
+  if (filterNames.length === 1) {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `https://discit-api.fly.dev/disc?${filterNames[0]}=${filterValues[0]}`);
+    xhr.responseType = 'json';
+    xhr.addEventListener('load', function () {
+      const sortedResponse = xhr.response.sort(function (a, b) {
+        a = a.brand.toLowerCase();
+        b = b.brand.toLowerCase();
+
+        return a < b ? -1 : a > b ? 1 : 0;
+      });
+      for (let i = 0; i < sortedResponse.length; i++) {
+        if (i === 0) {
+          renderDisc1(sortedResponse[i]);
+        } else if (sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
+          renderDisc2(sortedResponse[i]);
+        } else {
+          renderDisc3(sortedResponse[i]);
+        }
+      }
+    });
+    xhr.send();
+  } else if (filterNames.length > 1) {
+    let endpointString = `${filterNames[0]}=${filterValues[0]}`;
+    for (let j = 1; j < filterNames.length; j++) {
+      endpointString += `&${filterNames[j]}=${filterValues[j]}`;
+    }
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `https://discit-api.fly.dev/disc?${endpointString}`);
+    xhr.responseType = 'json';
+    xhr.addEventListener('load', function () {
+      const sortedResponse = xhr.response.sort(function (a, b) {
+        a = a.brand.toLowerCase();
+        b = b.brand.toLowerCase();
+
+        return a < b ? -1 : a > b ? 1 : 0;
+      });
+      for (let i = 0; i < sortedResponse.length; i++) {
+        if (i === 0) {
+          renderDisc1(sortedResponse[i]);
+        } else if (sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
+          renderDisc2(sortedResponse[i]);
+        } else {
+          renderDisc3(sortedResponse[i]);
+        }
+      }
+    });
+    xhr.send();
+  } else {
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://discit-api.fly.dev/disc');
+    xhr.responseType = 'json';
+    xhr.addEventListener('load', function () {
+      const sortedResponse = xhr.response.sort(function (a, b) {
+        a = a.brand.toLowerCase();
+        b = b.brand.toLowerCase();
+
+        return a < b ? -1 : a > b ? 1 : 0;
+      });
+      for (let i = 0; i < sortedResponse.length; i++) {
+        if (i === 0) {
+          renderDisc1(sortedResponse[i]);
+        } else if (sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
+          renderDisc2(sortedResponse[i]);
+        } else {
+          renderDisc3(sortedResponse[i]);
+        }
+      }
+    });
+    xhr.send();
+  }
   searchPageView();
 }
 
@@ -229,6 +319,5 @@ const $form = document.querySelector('form');
 $resetButton.addEventListener('click', formReset);
 
 function formReset(event) {
-  event.preventDefault();
   $form.reset();
 }
