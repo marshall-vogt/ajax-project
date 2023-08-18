@@ -320,4 +320,31 @@ $resetButton.addEventListener('click', formReset);
 
 function formReset(event) {
   $form.reset();
+  const $allBrandRows = document.querySelectorAll('.brand-row');
+  const $allDiscRows = document.querySelectorAll('.disc-row');
+  for (let k = 0; k < $allBrandRows.length; k++) {
+    $allBrandRows[k].remove();
+    $allDiscRows[k].remove();
+  }
+  const xhr = new XMLHttpRequest();
+  xhr.open('GET', 'https://discit-api.fly.dev/disc');
+  xhr.responseType = 'json';
+  xhr.addEventListener('load', function () {
+    const sortedResponse = xhr.response.sort(function (a, b) {
+      a = a.brand.toLowerCase();
+      b = b.brand.toLowerCase();
+
+      return a < b ? -1 : a > b ? 1 : 0;
+    });
+    for (let i = 0; i < sortedResponse.length; i++) {
+      if (i === 0) {
+        renderDisc1(sortedResponse[i]);
+      } else if (sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
+        renderDisc2(sortedResponse[i]);
+      } else {
+        renderDisc3(sortedResponse[i]);
+      }
+    }
+  });
+  xhr.send();
 }
