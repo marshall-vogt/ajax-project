@@ -4,6 +4,7 @@ const $buildMyBag = document.querySelector('.home-page-button');
 const $homePage = document.querySelector('.home-page');
 const $searchPage = document.querySelector('.search-page');
 const $filterPage = document.querySelector('.filter-page');
+const $navbar = document.querySelector('.navbar');
 
 $buildMyBag.addEventListener('click', searchPageView);
 
@@ -14,6 +15,8 @@ function searchPageView(event) {
   $searchPage.classList.add('shown');
   $filterPage.classList.remove('shown');
   $filterPage.classList.add('hidden');
+  $navbar.classList.remove('hidden');
+  $navbar.classList.add('shown');
 }
 
 const $navbarButtons = document.querySelectorAll('i');
@@ -30,6 +33,8 @@ function homePageView(event) {
   $searchPage.classList.add('hidden');
   $filterPage.classList.remove('shown');
   $filterPage.classList.add('hidden');
+  $navbar.classList.remove('shown');
+  $navbar.classList.add('hidden');
 }
 
 // Obtain API data

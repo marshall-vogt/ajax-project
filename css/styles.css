@@ -194,6 +194,7 @@
   bottom: 0;
   display: flex;
   align-items: center;
+  z-index: 3;
 }
 
 @media screen and (min-width: 575px) {
@@ -209,7 +210,6 @@
 
 .search-page {
   background-color: #d8e9a8;
-  border: 1px solid;
   min-height: 100vh;
 }
 
