@@ -51,15 +51,22 @@ function handleLoadEvent() {
 
     return a < b ? -1 : a > b ? 1 : 0;
   });
+  const brandArray = [];
+  const brandSlugArray = [];
   for (let i = 0; i < sortedResponse.length; i++) {
     if (i === 0) {
       renderDisc1(sortedResponse[i]);
+      brandArray.push(sortedResponse[i].brand);
+      brandSlugArray.push(sortedResponse[i].brand_slug);
     } else if (sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
       renderDisc2(sortedResponse[i]);
+      brandArray.push(sortedResponse[i].brand);
+      brandSlugArray.push(sortedResponse[i].brand_slug);
     } else {
       renderDisc3(sortedResponse[i]);
     }
   }
+  renderBrandOptions(brandArray, brandSlugArray);
 }
 xmlHR.send();
 
@@ -134,6 +141,17 @@ function renderDisc3(disc) {
   previousRow.append($discDiv);
   $discDiv.append($discName);
   $discDiv.append($discNumbers);
+}
+
+const $brandSelect = document.querySelector('#brand-select');
+
+function renderBrandOptions(arrayA, arrayB) {
+  for (let i = 0; i < arrayA.length; i++) {
+    const $option = document.createElement('option');
+    $option.textContent = arrayA[i];
+    $option.setAttribute('value', arrayB[i]);
+    $brandSelect.append($option);
+  }
 }
 
 // Event listener disc click to show to flight pattern
