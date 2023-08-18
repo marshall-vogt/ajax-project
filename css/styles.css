@@ -260,6 +260,14 @@ select {
   padding-left: 20px;
 }
 
+select:focus {
+  border: 1px solid #d8e9a8;
+}
+
+select:active {
+  border: 1px solid #d8e9a8;
+}
+
 .filter-button:hover {
   cursor: pointer;
 }

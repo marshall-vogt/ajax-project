@@ -46,7 +46,6 @@ function handleLoadEvent() {
 
     return a < b ? -1 : a > b ? 1 : 0;
   });
-
   for (let i = 0; i < sortedResponse.length; i++) {
     if (i === 0) {
       renderDisc1(sortedResponse[i]);
@@ -221,4 +220,15 @@ $applyButton.addEventListener('click', applyFilter);
 
 function applyFilter(event) {
   searchPageView();
+}
+
+// Filter reset
+
+const $resetButton = document.querySelector('.reset-button');
+const $form = document.querySelector('form');
+$resetButton.addEventListener('click', formReset);
+
+function formReset(event) {
+  event.preventDefault();
+  $form.reset();
 }

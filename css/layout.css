@@ -54,7 +54,7 @@ header {
 }
 
 .filter-button-div {
-  position: fixed;
+  position: sticky;
   bottom: 6%;
   display: flex;
   justify-content: center;
@@ -68,7 +68,7 @@ header {
   align-items: center;
 }
 
-.filter-page {
+form {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
