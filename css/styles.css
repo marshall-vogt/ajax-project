@@ -33,6 +33,11 @@
   border-radius: 50%;
 }
 
+.my-bag-text {
+  text-align: center;
+  font-size: 1.3rem;
+}
+
 .flight-pattern-image:hover {
   cursor: pointer;
 }

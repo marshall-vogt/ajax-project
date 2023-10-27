@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AJAX Project</title>
+  <title>Disc Buddy</title>
   <link rel="icon" href="images/favicon.ico">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
@@ -29,7 +29,12 @@
       </div>
     </div>
     <div class="background-blur-modal hidden"></div>
-    <div class="disc-modal hidden"><a href="" target="_blank"><img src="" alt="flight-pattern" class="flight-pattern-image"></a></div>
+    <div class="disc-modal hidden">
+      <a href="" target="_blank">
+        <img src="" alt="flight-pattern" class="flight-pattern-image">
+      </a>
+      <button class="bag-save">Save to Bag</button>
+    </div>
     <div class="search-page hidden" data-view="search-page">
       <div class="discs"></div>
       <div class="filter-button-div"><button class="filter-button">Filter</button></div>
@@ -88,6 +93,9 @@
           <button class="apply-button">Apply</button>
         </div>
       </form>
+    </div>
+    <div class="bag-page hidden" data-view="bag-page">
+      <div class="my-bag-text">My bag</div>
     </div>
     <div class="navbar hidden">
       <i class="fa-solid fa-house fa-2xl"></i>

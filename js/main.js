@@ -1,9 +1,10 @@
-// Search-page and home-page view swap
+// Search-page, home-page and bag-page view swap
 
 const $buildMyBag = document.querySelector('.home-page-button');
 const $homePage = document.querySelector('.home-page');
 const $searchPage = document.querySelector('.search-page');
 const $filterPage = document.querySelector('.filter-page');
+const $bagPage = document.querySelector('.bag-page');
 const $navbar = document.querySelector('.navbar');
 
 $buildMyBag.addEventListener('click', searchPageView);
@@ -15,6 +16,8 @@ function searchPageView(event) {
   $searchPage.classList.add('shown');
   $filterPage.classList.remove('shown');
   $filterPage.classList.add('hidden');
+  $bagPage.classList.remove('shown');
+  $bagPage.classList.add('hidden');
   $navbar.classList.remove('hidden');
   $navbar.classList.add('shown');
 }
@@ -22,9 +25,11 @@ function searchPageView(event) {
 const $navbarButtons = document.querySelectorAll('i');
 const $homeButton = $navbarButtons[0];
 const $searchButton = $navbarButtons[1];
+const $bagButton = $navbarButtons[3];
 
 $homeButton.addEventListener('click', homePageView);
 $searchButton.addEventListener('click', searchPageView);
+$bagButton.addEventListener('click', bagPageView);
 
 function homePageView(event) {
   $homePage.classList.remove('hidden');
@@ -35,6 +40,17 @@ function homePageView(event) {
   $filterPage.classList.add('hidden');
   $navbar.classList.remove('shown');
   $navbar.classList.add('hidden');
+}
+
+function bagPageView(event) {
+  $homePage.classList.remove('shown');
+  $homePage.classList.add('hidden');
+  $searchPage.classList.remove('shown');
+  $searchPage.classList.add('hidden');
+  $filterPage.classList.remove('shown');
+  $filterPage.classList.add('hidden');
+  $bagPage.classList.remove('hidden');
+  $bagPage.classList.add('shown');
 }
 
 // Obtain API data
@@ -370,4 +386,14 @@ function formReset(event) {
     }
   });
   xhr.send();
+}
+
+// Save disc to bag
+
+// const $saveButton = document.querySelector('.bag-save');
+// $saveButton.addEventListener('click', handleSaveClick);
+$discModal.addEventListener('click', handleSaveClick);
+
+function handleSaveClick(event) {
+  // if (event.target.textContent === 'Save to Bag') { console.log(event); }
 }
