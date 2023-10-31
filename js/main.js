@@ -40,9 +40,14 @@ function homePageView(event) {
   $filterPage.classList.add('hidden');
   $navbar.classList.remove('shown');
   $navbar.classList.add('hidden');
+  $bagPage.classList.remove('shown');
+  $bagPage.classList.add('hidden');
 }
 
 function bagPageView(event) {
+  if (data.bag.length > 0) {
+    data.bag.map((entry, index) => renderDisc2(data.bag[index]));
+  }
   $homePage.classList.remove('shown');
   $homePage.classList.add('hidden');
   $searchPage.classList.remove('shown');
@@ -195,6 +200,7 @@ function handleDiscClick(event) {
           $discModal.setAttribute('class', `disc-modal ${response[i].brand_slug}`);
           $flightPatternImage.setAttribute('src', `${response[i].pic}`);
           $anchor.setAttribute('href', `${response[i].link}`);
+          data.disc.push(response[i]);
         }
         $blurModal.classList.remove('hidden');
         $discModal.classList.remove('hidden');
@@ -209,6 +215,7 @@ function handleDiscClick(event) {
           $discModal.setAttribute('class', `disc-modal ${response[i].brand_slug}`);
           $flightPatternImage.setAttribute('src', `${response[i].pic}`);
           $anchor.setAttribute('href', `${response[i].link}`);
+          data.disc.push(response[i]);
         }
         $blurModal.classList.remove('hidden');
         $discModal.classList.remove('hidden');
@@ -223,6 +230,7 @@ function handleDiscClick(event) {
           $discModal.setAttribute('class', `disc-modal ${response[i].brand_slug}`);
           $flightPatternImage.setAttribute('src', `${response[i].pic}`);
           $anchor.setAttribute('href', `${response[i].link}`);
+          data.disc.push(response[i]);
         }
         $blurModal.classList.remove('hidden');
         $discModal.classList.remove('hidden');
@@ -236,6 +244,7 @@ function handleDiscClick(event) {
 function removeBlur(event) {
   $blurModal.classList.add('hidden');
   $discModal.classList.add('hidden');
+  data.disc = [];
 }
 
 // Filter page view swap
@@ -390,10 +399,12 @@ function formReset(event) {
 
 // Save disc to bag
 
-// const $saveButton = document.querySelector('.bag-save');
-// $saveButton.addEventListener('click', handleSaveClick);
-$discModal.addEventListener('click', handleSaveClick);
+const $saveButton = document.querySelector('.bag-save');
+$saveButton.addEventListener('click', handleSaveClick);
+// $discModal.addEventListener('click', handleSaveClick);
 
 function handleSaveClick(event) {
-  // if (event.target.textContent === 'Save to Bag') { console.log(event); }
+  data.bag.push(data.disc[0]);
+  removeBlur();
+  data.disc = [];
 }
