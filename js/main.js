@@ -45,8 +45,12 @@ function homePageView(event) {
 }
 
 function bagPageView(event) {
+  const $discBagDiscs = document.querySelectorAll('.disc-bag-disc');
+  for (let i = 0; i < $discBagDiscs.length; i++) {
+    $discBagDiscs[i].remove();
+  }
   if (data.bag.length > 0) {
-    data.bag.map((entry, index) => renderDisc2(data.bag[index]));
+    data.bag.map((entry, index) => renderBag(data.bag[index]));
   }
   $homePage.classList.remove('shown');
   $homePage.classList.add('hidden');
@@ -160,6 +164,24 @@ function renderDisc3(disc) {
   $discName.setAttribute('class', 'disc-name');
   $discNumbers.setAttribute('class', 'flight-numbers');
   previousRow.append($discDiv);
+  $discDiv.append($discName);
+  $discDiv.append($discNumbers);
+}
+
+function renderBag(disc) {
+  if (disc.brand_slug === 'løft-discs') {
+    disc.brand_slug = 'loft-discs';
+  }
+  const $discDiv = document.createElement('div');
+  const $discName = document.createElement('p');
+  const $discNumbers = document.createElement('p');
+  const discBag = document.querySelector('.disc-bag');
+  $discName.textContent = disc.name;
+  $discNumbers.textContent = `${disc.speed}|${disc.glide}|${disc.turn}|${disc.fade}|`;
+  $discDiv.setAttribute('class', `disc-bag-disc ${disc.brand_slug}`);
+  $discName.setAttribute('class', 'disc-name');
+  $discNumbers.setAttribute('class', 'flight-numbers');
+  discBag.append($discDiv);
   $discDiv.append($discName);
   $discDiv.append($discNumbers);
 }

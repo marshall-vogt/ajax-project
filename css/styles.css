@@ -57,6 +57,11 @@
     width: 110px;
   }
 
+  .disc-bag-disc {
+    height: 110px;
+    width: 110px;
+  }
+
   .disc-name {
     font-size: 0.65rem;
   }
@@ -85,6 +90,11 @@
 
 @media screen and (min-width: 576px) and (max-width: 767px) {
   .disc {
+    height: 120px;
+    width: 120px;
+  }
+
+  .disc-bag-disc {
     height: 120px;
     width: 120px;
   }
@@ -126,6 +136,11 @@
     width: 130px;
   }
 
+  .disc-bag-disc {
+    height: 130px;
+    width: 130px;
+  }
+
   .disc-name {
     font-size: 0.8rem;
   }
@@ -161,6 +176,11 @@
   }
 
   .disc {
+    height: 140px;
+    width: 140px;
+  }
+
+  .disc-bag-disc {
     height: 140px;
     width: 140px;
   }
@@ -294,6 +314,13 @@ i:hover {
 }
 
 .disc {
+  border-radius: 50%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 5px;
+}
+
+.disc-bag-disc {
   border-radius: 50%;
   margin-top: 15px;
   margin-bottom: 15px;

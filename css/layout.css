@@ -112,6 +112,14 @@ form {
   place-self: center;
 }
 
+.disc-bag-disc {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  place-self: center;
+}
+
 .flight-numbers {
   margin-top: -0.5px;
 }
