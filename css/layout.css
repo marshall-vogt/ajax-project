@@ -123,3 +123,7 @@ form {
 .flight-numbers {
   margin-top: -0.5px;
 }
+
+.placeholder {
+  height: 5vh;
+}

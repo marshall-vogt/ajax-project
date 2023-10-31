@@ -1,3 +1,7 @@
+body {
+  background-color: #d8e9a8;
+}
+
 .header-row {
   background-color: #1e5128;
   font-family: Orbitron, sans-serif;
@@ -234,7 +238,6 @@
 }
 
 .search-page {
-  background-color: #d8e9a8;
   min-height: 100vh;
 }
 
