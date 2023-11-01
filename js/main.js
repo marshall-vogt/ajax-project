@@ -25,7 +25,7 @@ function searchPageView(event) {
 const $navbarButtons = document.querySelectorAll('i');
 const $homeButton = $navbarButtons[0];
 const $searchButton = $navbarButtons[1];
-const $bagButton = $navbarButtons[3];
+const $bagButton = $navbarButtons[2];
 
 $homeButton.addEventListener('click', homePageView);
 $searchButton.addEventListener('click', searchPageView);
@@ -50,7 +50,7 @@ function bagPageView(event) {
     $discBagDiscs[i].remove();
   }
   if (data.bag.length > 0) {
-    data.bag.map((entry, index) => renderBag(data.bag[index]));
+    data.bag.map(disc => renderBag(disc));
   }
   $homePage.classList.remove('shown');
   $homePage.classList.add('hidden');
@@ -173,17 +173,24 @@ function renderBag(disc) {
     disc.brand_slug = 'loft-discs';
   }
   const $discDiv = document.createElement('div');
+  const $discBrand = document.createElement('p');
   const $discName = document.createElement('p');
   const $discNumbers = document.createElement('p');
-  const discBag = document.querySelector('.disc-bag');
+  const $discBag = document.querySelector('.disc-bag');
+  const $deleteButton = document.createElement('button');
+  $discBrand.textContent = disc.brand;
   $discName.textContent = disc.name;
   $discNumbers.textContent = `${disc.speed}|${disc.glide}|${disc.turn}|${disc.fade}|`;
+  $deleteButton.textContent = 'Remove Disc';
   $discDiv.setAttribute('class', `disc-bag-disc ${disc.brand_slug}`);
   $discName.setAttribute('class', 'disc-name');
   $discNumbers.setAttribute('class', 'flight-numbers');
-  discBag.append($discDiv);
+  $deleteButton.setAttribute('class', 'delete-button');
+  $discBag.append($discDiv);
+  $discDiv.append($discBrand);
   $discDiv.append($discName);
   $discDiv.append($discNumbers);
+  $discDiv.append($deleteButton);
 }
 
 const $brandSelect = document.querySelector('#brand-select');
@@ -429,4 +436,18 @@ function handleSaveClick(event) {
   data.bag.push(data.disc[0]);
   removeBlur();
   data.disc = [];
+}
+
+// Remove disc from bag
+
+$bagPage.addEventListener('click', handleDelete);
+
+function handleDelete() {
+  if (event.target.textContent === 'Remove Disc') {
+    const discName = event.target.previousSibling.previousSibling.textContent;
+    data.bag.forEach((disc, index) => {
+      if (disc.name === discName) data.bag.splice(index, 1);
+    });
+    bagPageView();
+  }
 }
