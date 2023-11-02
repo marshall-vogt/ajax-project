@@ -79,16 +79,12 @@ function handleLoadEvent() {
   const brandArray = [];
   const brandSlugArray = [];
   for (let i = 0; i < sortedResponse.length; i++) {
-    if (i === 0) {
+    if (i === 0 || sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
       renderDisc1(sortedResponse[i]);
       brandArray.push(sortedResponse[i].brand);
       brandSlugArray.push(sortedResponse[i].brand_slug);
-    } else if (sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
-      renderDisc2(sortedResponse[i]);
-      brandArray.push(sortedResponse[i].brand);
-      brandSlugArray.push(sortedResponse[i].brand_slug);
     } else {
-      renderDisc3(sortedResponse[i]);
+      renderDisc2(sortedResponse[i]);
     }
   }
   renderBrandOptions(brandArray, brandSlugArray);
@@ -124,32 +120,6 @@ function renderDisc1(disc) {
 }
 
 function renderDisc2(disc) {
-  if (disc.brand_slug === 'løft-discs') {
-    disc.brand_slug = 'loft-discs';
-  }
-  const $brandDiv = document.createElement('div');
-  const $brandHeader = document.createElement('h3');
-  const $discDiv = document.createElement('div');
-  const $rowDiv = document.createElement('div');
-  const $discName = document.createElement('p');
-  const $discNumbers = document.createElement('p');
-  $brandHeader.textContent = disc.brand;
-  $discName.textContent = disc.name;
-  $discNumbers.textContent = `${disc.speed}|${disc.glide}|${disc.turn}|${disc.fade}|`;
-  $brandDiv.setAttribute('class', 'brand-row');
-  $discDiv.setAttribute('class', `disc ${disc.brand_slug}`);
-  $rowDiv.setAttribute('class', 'disc-row');
-  $discName.setAttribute('class', 'disc-name');
-  $discNumbers.setAttribute('class', 'flight-numbers');
-  $discs.append($brandDiv);
-  $brandDiv.append($brandHeader);
-  $discs.append($rowDiv);
-  $rowDiv.append($discDiv);
-  $discDiv.append($discName);
-  $discDiv.append($discNumbers);
-}
-
-function renderDisc3(disc) {
   if (disc.brand_slug === 'løft-discs') {
     disc.brand_slug = 'loft-discs';
   }
@@ -327,12 +297,10 @@ function applyFilter(event) {
         return a < b ? -1 : a > b ? 1 : 0;
       });
       for (let i = 0; i < sortedResponse.length; i++) {
-        if (i === 0) {
+        if (i === 0 || sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
           renderDisc1(sortedResponse[i]);
-        } else if (sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
-          renderDisc2(sortedResponse[i]);
         } else {
-          renderDisc3(sortedResponse[i]);
+          renderDisc2(sortedResponse[i]);
         }
       }
     });
@@ -353,12 +321,10 @@ function applyFilter(event) {
         return a < b ? -1 : a > b ? 1 : 0;
       });
       for (let i = 0; i < sortedResponse.length; i++) {
-        if (i === 0) {
+        if (i === 0 || sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
           renderDisc1(sortedResponse[i]);
-        } else if (sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
-          renderDisc2(sortedResponse[i]);
         } else {
-          renderDisc3(sortedResponse[i]);
+          renderDisc2(sortedResponse[i]);
         }
       }
     });
@@ -375,12 +341,10 @@ function applyFilter(event) {
         return a < b ? -1 : a > b ? 1 : 0;
       });
       for (let i = 0; i < sortedResponse.length; i++) {
-        if (i === 0) {
+        if (i === 0 || sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
           renderDisc1(sortedResponse[i]);
-        } else if (sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
-          renderDisc2(sortedResponse[i]);
         } else {
-          renderDisc3(sortedResponse[i]);
+          renderDisc2(sortedResponse[i]);
         }
       }
     });
@@ -414,12 +378,10 @@ function formReset(event) {
       return a < b ? -1 : a > b ? 1 : 0;
     });
     for (let i = 0; i < sortedResponse.length; i++) {
-      if (i === 0) {
+      if (i === 0 || sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
         renderDisc1(sortedResponse[i]);
-      } else if (sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
-        renderDisc2(sortedResponse[i]);
       } else {
-        renderDisc3(sortedResponse[i]);
+        renderDisc2(sortedResponse[i]);
       }
     }
   });
