@@ -80,15 +80,14 @@ form {
   justify-content: center;
 }
 
-@media screen and (max-width: 575px) {
-  .disc-bag {
-    display: flex;
-    justify-content: center;
-  }
-
+@media screen and (max-width: 576px) {
   .disc-row {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     margin: 10px;
+  }
+
+  .disc-bag {
+    display: grid;
   }
 
   .flight-pattern-image-container {
@@ -100,31 +99,51 @@ form {
   }
 }
 
-@media screen and (min-width: 576px) and (max-width: 767px) {
+@media screen and (min-width: 576px) and (max-width: 768px) {
   .disc-row {
     grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
     margin: 20px;
   }
+
+  .disc-bag {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .disc-row {
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
     margin: 20px;
   }
+
+  .disc-bag {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
   .disc-row {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     margin: 20px;
   }
+
+  .disc-bag {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 }
 
-@media screen and (min-width: 1280px) and (max-width: 1535px) {
+@media screen and (min-width: 1280px) and (max-width: 1536px) {
   .disc-row {
     grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
     margin: 30px;
+  }
+
+  .disc-bag {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
 }
 
@@ -132,6 +151,11 @@ form {
   .disc-row {
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     margin: 35px;
+  }
+
+  .disc-bag {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   }
 }
 

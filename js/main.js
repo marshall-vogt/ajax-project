@@ -152,6 +152,7 @@ function renderBag(disc) {
   $discName.textContent = disc.name;
   $discNumbers.textContent = `${disc.speed}|${disc.glide}|${disc.turn}|${disc.fade}|`;
   $deleteButton.textContent = 'Remove Disc';
+  $discBrand.setAttribute('class', 'disc-bag-brand');
   $discDiv.setAttribute('class', `disc-bag-disc ${disc.brand_slug}`);
   $discName.setAttribute('class', 'disc-name');
   $discNumbers.setAttribute('class', 'flight-numbers');

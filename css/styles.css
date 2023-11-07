@@ -88,15 +88,15 @@ body {
   }
 }
 
-@media screen and (min-width: 576px) and (max-width: 767px) {
+@media screen and (min-width: 576px) and (max-width: 768px) {
   .disc {
     height: 120px;
     width: 120px;
   }
 
   .disc-bag-disc {
-    height: 120px;
-    width: 120px;
+    height: 240px;
+    width: 240px;
   }
 
   .disc-name {
@@ -125,7 +125,7 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .main-image {
     transform: translate(0, 55px);
     height: 100vh;
@@ -137,8 +137,8 @@ body {
   }
 
   .disc-bag-disc {
-    height: 200px;
-    width: 200px;
+    height: 260px;
+    width: 260px;
   }
 
   .disc-name {
@@ -167,7 +167,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1024px) and (max-width: 1279px) {
+@media screen and (min-width: 1024px) and (max-width: 1280px) {
   .main-image {
     transform: translate(0, 55px);
     height: 100vh;
@@ -179,8 +179,8 @@ body {
   }
 
   .disc-bag-disc {
-    height: 200px;
-    width: 200px;
+    height: 280px;
+    width: 280px;
   }
 
   .disc-name {
@@ -209,7 +209,7 @@ body {
   }
 }
 
-@media screen and (min-width: 1280px) and (max-width: 1535px) {
+@media screen and (min-width: 1280px) and (max-width: 1536px) {
   .main-image {
     transform: translate(0, 55px);
     height: 100vh;
@@ -221,8 +221,8 @@ body {
   }
 
   .disc-bag-disc {
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
   }
 
   .disc-name {
@@ -265,8 +265,8 @@ body {
   }
 
   .disc-bag-disc {
-    height: 140px;
-    width: 140px;
+    height: 300px;
+    width: 300px;
   }
 
   .disc-name {
@@ -407,10 +407,6 @@ i:hover {
   margin-left: 5px;
 }
 
-.disc-bag {
-  border: 1px solid;
-}
-
 .disc:hover {
   cursor: pointer;
   transform: scale(1.2);
@@ -433,6 +429,10 @@ h3 {
 
 .disc-name {
   font-weight: 700;
+}
+
+.disc-bag-brand {
+  font-family: Ubuntu, sans-serif;
 }
 
 /* Disc Colors */
