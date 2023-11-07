@@ -1,121 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:title" content="Disc Bag Builder">
-  <meta property="og:type" content="website" />
-  <meta property="og:description" content="Browse discs and build a bag with all of your favorites">
-  <meta property="og:image" content="https://marshall-vogt.github.io/disc-buddy/images/home-page_OG.jpeg">
-  <meta property="og:url" content="marshall-vogt.github.io/disc-buddy/">
-  <meta name="twitter:card" content="summary_large_image">
-  <title>Disc Buddy</title>
-  <link rel="icon" href="images/favicon.ico">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;600;700&family=Orbitron:wght@200;400;600;700&family=Passion+One:wght@700&family=Ubuntu:wght@300;600;700&family=Varela+Round&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-  <link rel="manifest" href="images/site.webmanifest">
-</head>
-<body>
-  <header>
-    <div class="header-row">
-      <img src="images/disc.png" alt="flying-disc" class="header-image">
-      <p class="header-title">Disc Buddy</p>
-    </div>
-  </header>
-  <main>
-    <div class="home-page shown" data-view="home-page">
-      <div class="main-row">
-        <button class="home-page-button">Build My Bag</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:title" content="Disc Bag Builder" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:description"
+      content="Browse discs and build a bag with all of your favorites"
+    />
+    <meta
+      property="og:image"
+      content="https://marshall-vogt.github.io/disc-buddy/images/home-page_OG.jpeg"
+    />
+    <meta property="og:url" content="marshall-vogt.github.io/disc-buddy/" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Disc Buddy</title>
+    <link rel="icon" href="images/favicon.ico" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@200;400;600;700&family=Orbitron:wght@200;400;600;700&family=Passion+One:wght@700&family=Ubuntu:wght@300;600;700&family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/site.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <div class="header-row">
+        <img src="images/disc.png" alt="flying-disc" class="header-image" />
+        <p class="header-title">Disc Buddy</p>
       </div>
-    </div>
-    <div class="background-blur-modal hidden"></div>
-    <div class="disc-modal hidden">
-      <a href="" target="_blank">
-        <img src="" alt="flight-pattern" class="flight-pattern-image">
-      </a>
-      <button class="bag-save">Save to Bag</button>
-    </div>
-    <div class="search-page hidden" data-view="search-page">
-      <div class="discs"></div>
-      <div class="filter-button-div"><button class="filter-button">Filter</button></div>
-    </div>
-    <div class="filter-page hidden">
-      <form>
-        <div class="drop-down-row">
-          <select name="brand" id="brand-select">
-            <option value="" selected disabled>Select a Brand</option>
-          </select>
-          <select name="speed" id="speed-select">
-            <option value="" selected disabled>Select a Speed</option>
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="2.5">2.5</option>
-            <option value="3">3</option>
-            <option value="3.5">3.5</option>
-            <option value="4">4</option>
-            <option value="4.5">4.5</option>
-            <option value="5">5</option>
-            <option value="5.5">5.5</option>
-            <option value="6">6</option>
-            <option value="6.5">6.5</option>
-            <option value="7">7</option>
-            <option value="8">8</option>
-            <option value="9">9</option>
-            <option value="10">10</option>
-            <option value="11">11</option>
-            <option value="12">12</option>
-            <option value="13">13</option>
-            <option value="14">14</option>
-            <option value="14.5">14.5</option>
-            <option value="15">15</option>
-          </select>
-          <select name="stability" id="stability-select">
-            <option value="" selected disabled>Select a Stability</option>
-            <option value="very-understable">Very Understable</option>
-            <option value="understable">Understable</option>
-            <option value="stable">Stable</option>
-            <option value="overstable">Overstable</option>
-            <option value="very-overstable">Very Overstable</option>
-          </select>
-          <select name="category" id="category-select">
-            <option value="" selected disabled>Select a Category</option>
-            <option value="putter">Putter</option>
-            <option value="approach">Approach</option>
-            <option value="midrange">Midrange</option>
-            <option value="control-driver">Control Driver</option>
-            <option value="hybrid-driver">Hybrid Driver</option>
-            <option value="distance-driver">Distance Driver</option>
-            <option value="disc-golf-sets">Disc Golf Sets</option>
-          </select>
+    </header>
+    <main>
+      <div class="home-page shown" data-view="home-page">
+        <div class="main-row">
+          <button class="home-page-button">Build My Bag</button>
         </div>
-        <div class="reset-apply-row">
-          <button type="button" class="reset-button">Reset</button>
-          <button class="apply-button">Apply</button>
+      </div>
+      <div class="background-blur-modal hidden"></div>
+      <div class="disc-modal hidden">
+        <a href="" target="_blank" class="flight-pattern-image-container">
+          <img src="" alt="flight-pattern" class="flight-pattern-image" />
+        </a>
+        <button class="bag-save-button">Save to Bag</button>
+      </div>
+      <div class="search-page hidden" data-view="search-page">
+        <div class="discs"></div>
+        <div class="filter-button-div">
+          <button class="filter-button">Filter</button>
         </div>
-      </form>
-    </div>
-    <div class="bag-page hidden" data-view="bag-page">
-      <div class="my-bag-text">My bag</div>
-      <div class="disc-bag"></div>
-    </div>
-    <div class="navbar hidden">
-      <i class="fa-solid fa-house fa-2xl"></i>
-      <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
-      <i class="fa-solid fa-circle-plus fa-2xl"></i>
-    </div>
-    <div class="placeholder"></div>
-  </main>
-  <script src="js/data.js"></script>
-  <script src="js/main.js"></script>
-</body>
+      </div>
+      <div class="filter-page hidden">
+        <form>
+          <div class="drop-down-row">
+            <select name="brand" id="brand-select">
+              <option value="" selected disabled>Select a Brand</option>
+            </select>
+            <select name="speed" id="speed-select">
+              <option value="" selected disabled>Select a Speed</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="2.5">2.5</option>
+              <option value="3">3</option>
+              <option value="3.5">3.5</option>
+              <option value="4">4</option>
+              <option value="4.5">4.5</option>
+              <option value="5">5</option>
+              <option value="5.5">5.5</option>
+              <option value="6">6</option>
+              <option value="6.5">6.5</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="14.5">14.5</option>
+              <option value="15">15</option>
+            </select>
+            <select name="stability" id="stability-select">
+              <option value="" selected disabled>Select a Stability</option>
+              <option value="very-understable">Very Understable</option>
+              <option value="understable">Understable</option>
+              <option value="stable">Stable</option>
+              <option value="overstable">Overstable</option>
+              <option value="very-overstable">Very Overstable</option>
+            </select>
+            <select name="category" id="category-select">
+              <option value="" selected disabled>Select a Category</option>
+              <option value="putter">Putter</option>
+              <option value="approach">Approach</option>
+              <option value="midrange">Midrange</option>
+              <option value="control-driver">Control Driver</option>
+              <option value="hybrid-driver">Hybrid Driver</option>
+              <option value="distance-driver">Distance Driver</option>
+              <option value="disc-golf-sets">Disc Golf Sets</option>
+            </select>
+          </div>
+          <div class="reset-apply-row">
+            <button type="button" class="reset-button">Reset</button>
+            <button class="apply-button">Apply</button>
+          </div>
+        </form>
+      </div>
+      <div class="bag-page hidden" data-view="bag-page">
+        <div class="my-bag-text">My bag</div>
+        <div class="disc-bag"></div>
+      </div>
+      <div class="navbar hidden">
+        <i class="fa-solid fa-house fa-2xl"></i>
+        <i class="fa-solid fa-magnifying-glass fa-2xl"></i>
+        <i class="fa-solid fa-circle-plus fa-2xl"></i>
+      </div>
+      <div class="placeholder"></div>
+    </main>
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

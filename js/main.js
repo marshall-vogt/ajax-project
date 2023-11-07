@@ -196,7 +196,10 @@ function handleDiscClick(event) {
           response[i].brand_slug = 'loft-discs';
         }
         if (response[i].name === $discName.textContent) {
-          $discModal.setAttribute('class', `disc-modal ${response[i].brand_slug}`);
+          $discModal.setAttribute(
+            'class',
+            `disc-modal ${response[i].brand_slug}`
+          );
           $flightPatternImage.setAttribute('src', `${response[i].pic}`);
           $anchor.setAttribute('href', `${response[i].link}`);
           data.disc.push(response[i]);
@@ -211,7 +214,10 @@ function handleDiscClick(event) {
           response[i].brand_slug = 'loft-discs';
         }
         if (response[i].name === $discName) {
-          $discModal.setAttribute('class', `disc-modal ${response[i].brand_slug}`);
+          $discModal.setAttribute(
+            'class',
+            `disc-modal ${response[i].brand_slug}`
+          );
           $flightPatternImage.setAttribute('src', `${response[i].pic}`);
           $anchor.setAttribute('href', `${response[i].link}`);
           data.disc.push(response[i]);
@@ -226,7 +232,10 @@ function handleDiscClick(event) {
           response[i].brand_slug = 'loft-discs';
         }
         if (response[i].name === $discName.textContent) {
-          $discModal.setAttribute('class', `disc-modal ${response[i].brand_slug}`);
+          $discModal.setAttribute(
+            'class',
+            `disc-modal ${response[i].brand_slug}`
+          );
           $flightPatternImage.setAttribute('src', `${response[i].pic}`);
           $anchor.setAttribute('href', `${response[i].link}`);
           data.disc.push(response[i]);
@@ -235,8 +244,7 @@ function handleDiscClick(event) {
         $discModal.classList.remove('hidden');
       }
     }
-  }
-  );
+  });
   xmlHR.send();
 }
 
@@ -287,7 +295,10 @@ function applyFilter(event) {
   }
   if (filterNames.length === 1) {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', `https://discit-api.fly.dev/disc?${filterNames[0]}=${filterValues[0]}`);
+    xhr.open(
+      'GET',
+      `https://discit-api.fly.dev/disc?${filterNames[0]}=${filterValues[0]}`
+    );
     xhr.responseType = 'json';
     xhr.addEventListener('load', function () {
       const sortedResponse = xhr.response.sort(function (a, b) {
@@ -297,7 +308,10 @@ function applyFilter(event) {
         return a < b ? -1 : a > b ? 1 : 0;
       });
       for (let i = 0; i < sortedResponse.length; i++) {
-        if (i === 0 || sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
+        if (
+          i === 0 ||
+          sortedResponse[i].brand !== sortedResponse[i - 1].brand
+        ) {
           renderDisc1(sortedResponse[i]);
         } else {
           renderDisc2(sortedResponse[i]);
@@ -321,7 +335,10 @@ function applyFilter(event) {
         return a < b ? -1 : a > b ? 1 : 0;
       });
       for (let i = 0; i < sortedResponse.length; i++) {
-        if (i === 0 || sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
+        if (
+          i === 0 ||
+          sortedResponse[i].brand !== sortedResponse[i - 1].brand
+        ) {
           renderDisc1(sortedResponse[i]);
         } else {
           renderDisc2(sortedResponse[i]);
@@ -341,7 +358,10 @@ function applyFilter(event) {
         return a < b ? -1 : a > b ? 1 : 0;
       });
       for (let i = 0; i < sortedResponse.length; i++) {
-        if (i === 0 || sortedResponse[i].brand !== sortedResponse[i - 1].brand) {
+        if (
+          i === 0 ||
+          sortedResponse[i].brand !== sortedResponse[i - 1].brand
+        ) {
           renderDisc1(sortedResponse[i]);
         } else {
           renderDisc2(sortedResponse[i]);
@@ -390,7 +410,7 @@ function formReset(event) {
 
 // Save disc to bag
 
-const $saveButton = document.querySelector('.bag-save');
+const $saveButton = document.querySelector('.bag-save-button');
 $saveButton.addEventListener('click', handleSaveClick);
 // $discModal.addEventListener('click', handleSaveClick);
 

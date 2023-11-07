@@ -42,10 +42,6 @@ body {
   font-size: 1.3rem;
 }
 
-.flight-pattern-image:hover {
-  cursor: pointer;
-}
-
 @media screen and (max-width: 575px) {
   .main-image {
     transform: translate(-21%, 55px) scale(0.9);
@@ -62,8 +58,8 @@ body {
   }
 
   .disc-bag-disc {
-    height: 110px;
-    width: 110px;
+    height: 200px;
+    width: 200px;
   }
 
   .disc-name {
@@ -75,16 +71,16 @@ body {
   }
 
   .disc-modal {
-    width: 350px;
-    height: 350px;
+    width: 280px;
+    height: 280px;
   }
 
-  .flight-pattern-image {
-    transform: scale(0.6);
+  .flight-pattern-image-container {
+    transform: scale(0.4);
   }
 
-  .flight-pattern-image:hover {
-    transform: scale(0.62);
+  .flight-pattern-image-container:hover {
+    transform: scale(0.45);
   }
 
   .home-page {
@@ -116,11 +112,11 @@ body {
     height: 400px;
   }
 
-  .flight-pattern-image {
+  .flight-pattern-image-container {
     transform: scale(0.7);
   }
 
-  .flight-pattern-image:hover {
+  .flight-pattern-image-container:hover {
     transform: scale(0.72);
   }
 
@@ -129,7 +125,7 @@ body {
   }
 }
 
-@media screen and (min-width: 768px) and (max-width: 1520px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .main-image {
     transform: translate(0, 55px);
     height: 100vh;
@@ -158,11 +154,11 @@ body {
     height: 450px;
   }
 
-  .flight-pattern-image {
+  .flight-pattern-image-container {
     transform: scale(0.8);
   }
 
-  .flight-pattern-image:hover {
+  .flight-pattern-image-container:hover {
     transform: scale(0.82);
   }
 
@@ -171,7 +167,91 @@ body {
   }
 }
 
-@media screen and (min-width: 1520px) {
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+  .main-image {
+    transform: translate(0, 55px);
+    height: 100vh;
+  }
+
+  .disc {
+    height: 130px;
+    width: 130px;
+  }
+
+  .disc-bag-disc {
+    height: 200px;
+    width: 200px;
+  }
+
+  .disc-name {
+    font-size: 0.8rem;
+  }
+
+  .flight-numbers {
+    font-size: 0.7rem;
+  }
+
+  .disc-modal {
+    width: 450px;
+    height: 450px;
+  }
+
+  .flight-pattern-image-container {
+    transform: scale(0.8);
+  }
+
+  .flight-pattern-image-container:hover {
+    transform: scale(0.82);
+  }
+
+  .home-page {
+    background-position: 10% 50%;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1535px) {
+  .main-image {
+    transform: translate(0, 55px);
+    height: 100vh;
+  }
+
+  .disc {
+    height: 140px;
+    width: 140px;
+  }
+
+  .disc-bag-disc {
+    height: 200px;
+    width: 200px;
+  }
+
+  .disc-name {
+    font-size: 0.8rem;
+  }
+
+  .flight-numbers {
+    font-size: 0.7rem;
+  }
+
+  .disc-modal {
+    width: 450px;
+    height: 450px;
+  }
+
+  .flight-pattern-image-container {
+    transform: scale(0.8);
+  }
+
+  .flight-pattern-image-container:hover {
+    transform: scale(0.82);
+  }
+
+  .home-page {
+    background-position: 10% 50%;
+  }
+}
+
+@media screen and (min-width: 1536px) {
   .main-image {
     transform: translate(0, 55px);
     height: 100vh;
@@ -202,11 +282,11 @@ body {
     height: 500px;
   }
 
-  .flight-pattern-image {
+  .flight-pattern-image-container {
     transform: scale(0.85);
   }
 
-  .flight-pattern-image:hover {
+  .flight-pattern-image-container:hover {
     transform: scale(0.87);
   }
 
@@ -224,17 +304,12 @@ body {
   display: flex;
   align-items: center;
   z-index: 3;
+  justify-content: center;
 }
 
-@media screen and (min-width: 575px) {
-  .navbar {
-    justify-content: center;
-  }
-
-  i {
-    margin-left: 50px;
-    margin-right: 50px;
-  }
+i {
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .search-page {
@@ -269,7 +344,9 @@ body {
 }
 
 .reset-button:hover,
-.apply-button:hover {
+.apply-button:hover,
+.bag-save-button:hover,
+.flight-pattern-image:hover {
   cursor: pointer;
 }
 
@@ -328,6 +405,10 @@ i:hover {
   margin-top: 15px;
   margin-bottom: 15px;
   margin-left: 5px;
+}
+
+.disc-bag {
+  border: 1px solid;
 }
 
 .disc:hover {

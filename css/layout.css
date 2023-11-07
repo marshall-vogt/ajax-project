@@ -27,10 +27,6 @@
   align-items: center;
 }
 
-.bag-save {
-  margin-top: -40px;
-}
-
 .header-row {
   display: flex;
   align-items: center;
@@ -84,17 +80,58 @@ form {
   justify-content: center;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 575px) {
+  .disc-bag {
+    display: flex;
+    justify-content: center;
+  }
+
   .disc-row {
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
     margin: 10px;
   }
+
+  .flight-pattern-image-container {
+    margin-bottom: -62px;
+  }
+
+  .bag-save-button {
+    margin-bottom: 62px;
+  }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .disc-row {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    margin: 20px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .disc-row {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    margin: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
   .disc-row {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     margin: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1535px) {
+  .disc-row {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    margin: 30px;
+  }
+}
+
+@media screen and (min-width: 1536px) {
+  .disc-row {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    margin: 35px;
   }
 }
 
@@ -118,6 +155,7 @@ form {
   justify-content: center;
   align-items: center;
   place-self: center;
+  border: 1px solid;
 }
 
 .flight-numbers {
