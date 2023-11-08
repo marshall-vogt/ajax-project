@@ -69,12 +69,6 @@
         </a>
         <button class="bag-save-button">Save to Bag</button>
       </div>
-      <div class="search-page hidden" data-view="search-page">
-        <div class="discs"></div>
-        <div class="filter-button-div">
-          <button class="filter-button">Filter</button>
-        </div>
-      </div>
       <div class="filter-page hidden">
         <form>
           <div class="drop-down-row">
@@ -130,8 +124,20 @@
           </div>
         </form>
       </div>
+      <div class="lds-circle hidden" id="loading-circle-main"><div></div></div>
+      <div class="search-page hidden" data-view="search-page">
+        <div class="discs"></div>
+        <div class="filter-button-div">
+          <button class="filter-button">Filter</button>
+        </div>
+      </div>
       <div class="bag-page hidden" data-view="bag-page">
         <div class="my-bag-text"><h3>My Bag</h3></div>
+        <div class="no-discs-text hidden">
+          <p>
+            No discs saved in bag. Return to search menu to begin adding discs.
+          </p>
+        </div>
         <div class="disc-bag"></div>
       </div>
       <div class="navbar hidden">

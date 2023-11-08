@@ -26,6 +26,7 @@ const $navbarButtons = document.querySelectorAll('i');
 const $homeButton = $navbarButtons[0];
 const $searchButton = $navbarButtons[1];
 const $bagButton = $navbarButtons[2];
+const $noDiscsText = document.querySelector('.no-discs-text');
 
 $homeButton.addEventListener('click', homePageView);
 $searchButton.addEventListener('click', searchPageView);
@@ -49,7 +50,13 @@ function bagPageView(event) {
   for (let i = 0; i < $discBagDiscs.length; i++) {
     $discBagDiscs[i].remove();
   }
+  if (data.bag.length === 0) {
+    $noDiscsText.classList.remove('hidden');
+    $noDiscsText.classList.add('shown');
+  }
   if (data.bag.length > 0) {
+    $noDiscsText.classList.remove('shown');
+    $noDiscsText.classList.add('hidden');
     data.bag.map(disc => renderBag(disc));
   }
   $homePage.classList.remove('shown');
@@ -64,10 +71,23 @@ function bagPageView(event) {
 
 // Obtain API data
 
+const $loadingCircle = document.querySelector('#loading-circle-main');
 const xmlHR = new XMLHttpRequest();
 xmlHR.open('GET', 'https://discit-api.fly.dev/disc');
 xmlHR.responseType = 'json';
 xmlHR.addEventListener('load', handleLoadEvent);
+xmlHR.addEventListener('loadstart', handleLoadStart);
+xmlHR.addEventListener('loadend', handleLoadEnd);
+
+function handleLoadStart(scope) {
+  $loadingCircle.classList.remove('hidden');
+  $loadingCircle.classList.add('shown');
+}
+
+function handleLoadEnd(scope) {
+  $loadingCircle.classList.remove('shown');
+  $loadingCircle.classList.add('hidden');
+}
 
 function handleLoadEvent() {
   const sortedResponse = xmlHR.response.sort(function (a, b) {
@@ -301,6 +321,8 @@ function applyFilter(event) {
       `https://discit-api.fly.dev/disc?${filterNames[0]}=${filterValues[0]}`
     );
     xhr.responseType = 'json';
+    xhr.addEventListener('loadstart', handleLoadStart);
+    xhr.addEventListener('loadend', handleLoadEnd);
     xhr.addEventListener('load', function () {
       const sortedResponse = xhr.response.sort(function (a, b) {
         a = a.brand.toLowerCase();
@@ -328,6 +350,8 @@ function applyFilter(event) {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', `https://discit-api.fly.dev/disc?${endpointString}`);
     xhr.responseType = 'json';
+    xhr.addEventListener('loadstart', handleLoadStart);
+    xhr.addEventListener('loadend', handleLoadEnd);
     xhr.addEventListener('load', function () {
       const sortedResponse = xhr.response.sort(function (a, b) {
         a = a.brand.toLowerCase();
@@ -351,6 +375,8 @@ function applyFilter(event) {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://discit-api.fly.dev/disc');
     xhr.responseType = 'json';
+    xhr.addEventListener('loadstart', handleLoadStart);
+    xhr.addEventListener('loadend', handleLoadEnd);
     xhr.addEventListener('load', function () {
       const sortedResponse = xhr.response.sort(function (a, b) {
         a = a.brand.toLowerCase();
@@ -391,6 +417,8 @@ function formReset(event) {
   const xhr = new XMLHttpRequest();
   xhr.open('GET', 'https://discit-api.fly.dev/disc');
   xhr.responseType = 'json';
+  xhr.addEventListener('loadstart', handleLoadStart);
+  xhr.addEventListener('loadend', handleLoadEnd);
   xhr.addEventListener('load', function () {
     const sortedResponse = xhr.response.sort(function (a, b) {
       a = a.brand.toLowerCase();
@@ -413,7 +441,6 @@ function formReset(event) {
 
 const $saveButton = document.querySelector('.bag-save-button');
 $saveButton.addEventListener('click', handleSaveClick);
-// $discModal.addEventListener('click', handleSaveClick);
 
 function handleSaveClick(event) {
   data.bag.push(data.disc[0]);
